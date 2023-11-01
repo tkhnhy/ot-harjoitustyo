@@ -1,2 +1,2 @@
 # Ohjelmistotekniikka, harjoitustyö
-Ajattelin tehdä pienen SHMUP-tyyppisen arcade pelin.
+Ajattelin tehdä **pienen** SHMUP-tyyppisen arcade *pelin*.
