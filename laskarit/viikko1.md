@@ -1,0 +1,1 @@
+Komentorivi ha versionhallinta ovat jo tuttuja.
