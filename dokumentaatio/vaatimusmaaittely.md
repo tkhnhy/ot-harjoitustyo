@@ -8,8 +8,3 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 ### Jatkokehitysideoita
 - Highscore lista, johon pelaaja voi tallentaa oman nimen ja pistemäärän
 - Korkeampi vaikeusaste (lisää vihollisia?)
-
-
-[Laskarit](https://github.com/tkhnhy/ot-harjoitustyo/tree/main/laskarit)
-
-[Tuntikirjanpito](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
