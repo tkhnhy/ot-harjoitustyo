@@ -1,3 +1,3 @@
 |*Pvm*	|*Tunnit*	|*Selitys*	|
 |:------|:----------|:----------|
-|0	|0			|placeholder	|
+|15.11	|1			|Projektin alkusäätö	|
