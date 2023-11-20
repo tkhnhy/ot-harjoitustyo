@@ -13,22 +13,13 @@ class GameLoop:
 		fps = 30
 	
 		while run:
-			self._player.setplayerdxdy()
-			controls = pygame.key.get_pressed()
-			if controls[pygame.K_d]:
-				self._player.setplayerdxdy(dx = 4)
-			if controls[pygame.K_a]:
-				self._player.setplayerdxdy(dx = -4)
-			if controls[pygame.K_s]:
-				self._player.setplayerdxdy(dy = 4)
-			if controls[pygame.K_w]:
-				self._player.setplayerdxdy(dy = -4)
-
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					run = False
 			
-			self._player.moveplayer()		
+			pressed_keys = pygame.key.get_pressed()
+				
+			self._player.playercontrol(pressed_keys)
 			self._clock.tick(fps)
 			self._renderer.render()
 			
