@@ -12,5 +12,5 @@ class Enemy1(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
-        self.dx = 0
-        self.dy = 0
+    def move(self, dx=0, dy=0):
+        self.rect.move_ip(dx, dy)

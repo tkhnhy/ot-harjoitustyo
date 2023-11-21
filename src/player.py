@@ -12,11 +12,6 @@ class Player(pygame.sprite.Sprite):
         
         self.rect.x = x
         self.rect.y = y
-
-        self.keyleft = False
-        self.keyright = False
-        self.keyup = False
-        self.keydown = False
         
     def playercontrol(self, pressed_keys):
         if pressed_keys[pygame.K_w]:
@@ -27,9 +22,12 @@ class Player(pygame.sprite.Sprite):
             self.rect.move_ip(-4, 0)
         if pressed_keys[pygame.K_d]:
             self.rect.move_ip(4, 0)
-    
-    def setplayerdirection(self, left=False, right=False, up=False, down=False):
-        self.keyleft = left
-        self.keyright = right
-        self.keyup = up
-        self.keydown = down
+        
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > 512:
+            self.rect.right = 512
+        if self.rect.top <= 0:
+            self.rect.top = 0
+        if self.rect.bottom >= 856:
+            self.rect.bottom = 856
