@@ -8,11 +8,11 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 
 ## Dokukmentaatio
 
-[Tuntikirjanpito](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
-[Changelog](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
-[Vaatimusmäärittely](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+- [Tuntikirjanpito](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+- [Changelog](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
+- [Vaatimusmäärittely](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-##Ohjelman käyttö
+## Ohjelman käyttö
 
 1. Asenna riippuvuudet poetrylla
 
