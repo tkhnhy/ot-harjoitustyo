@@ -13,16 +13,18 @@ class Player(pygame.sprite.Sprite):
 		self.rect.x = x
 		self.rect.y = y
 	
+		self.speed = 5
+
 	def playercontrol(self, pressed_keys):
 		
 		if pressed_keys[pygame.K_w]:
-			self.moveplayer(0, -4)
+			self.moveplayer(0, -self.speed)
 		if pressed_keys[pygame.K_s]:
-			self.moveplayer(0, 4)
+			self.moveplayer(0, self.speed)
 		if pressed_keys[pygame.K_a]:
-			self.moveplayer(-4, 0)
+			self.moveplayer(-self.speed, 0)
 		if pressed_keys[pygame.K_d]:
-			self.moveplayer(4, 0)
+			self.moveplayer(self.speed, 0)
 		
 		if self.rect.left < 0:
 			self.rect.left = 0
