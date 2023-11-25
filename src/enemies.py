@@ -11,8 +11,11 @@ class Enemy1(pygame.sprite.Sprite):
 
         self.rect.x = x
         self.rect.y = y
-
-		self.pattern = pattern
+        self.pattern = pattern
 		
     def move(self, dx=0, dy=0):
         self.rect.move_ip(dx, dy)
+
+    def update(self):
+        if self.pattern == 1:
+            self.move(0, 5)

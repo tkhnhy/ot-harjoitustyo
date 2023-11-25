@@ -14,10 +14,7 @@ def main():
 	
 	player = Player(236, 800)
 
-	all_sprites = pygame.sprite.Group()
-	all_sprites.add(player)
-
-	renderer = Renderer(display, all_sprites)
+	renderer = Renderer(display)
 	clock = pygame.time.Clock()
 	
 	game = GameLoop(clock, renderer, player)

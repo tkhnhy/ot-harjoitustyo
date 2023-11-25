@@ -1,11 +1,10 @@
 import pygame
 
 class Renderer:
-	def __init__(self, display, sprites):
+	def __init__(self, display):
 		self.display = display
-		self.sprites = sprites
 	
-	def render(self):
+	def render(self, sprites):
 		self.display.fill((100, 100, 100))
-		self.sprites.draw(self.display)
+		sprites.draw(self.display)
 		pygame.display.update()
