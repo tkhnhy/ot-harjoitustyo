@@ -14,4 +14,6 @@ class EnemyBullet1(pygame.sprite.Sprite):
 		self.speed = speed
 	
 	def update(self):
-		self.rect.move_ip(0, speed)
+		if self.rect.y > 856:
+			self.kill()
+		self.rect.move_ip(0, self.speed)
