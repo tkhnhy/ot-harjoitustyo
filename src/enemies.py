@@ -12,19 +12,27 @@ class Enemy1(pygame.sprite.Sprite):
 
         self.rect.x = x
         self.rect.y = y
+        
         self.pattern = pattern
-    
+        self.previous_shoot_time = 0
+
     def move(self, pattern):
         if pattern == 1:
             self.rect.move_ip(0, 5)
         if pattern == 2:
             self.rect.move_ip(0, 3)
-
-    def canshoot(self):
+    
+    def get_pattern(self):
+        return self.pattern
+    
+    def canshoot(self, current_time):
         if self.rect.y < 0:
-            return False
-        else:
+                return False
+        elif current_time - self.previous_shoot_time >= 2000:
+            self.previous_shoot_time = current_time
             return True
+        else:
+            return False
     
     def update(self):
         if self.rect.y > 856:

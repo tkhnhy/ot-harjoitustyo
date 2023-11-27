@@ -26,7 +26,7 @@ class GameLoop:
 		self.all_enemies.add(self.test_enemy2)
 		self.all_sprites_group.add(self.test_enemy2)
 
-	def playercontrol(self, pressed_keys):
+	def playercontrol(self, pressed_keys, time):
 		
 		if pressed_keys[pygame.K_w]:
 			self._player.moveplayer(0, -self._player.speed)
@@ -37,10 +37,12 @@ class GameLoop:
 		if pressed_keys[pygame.K_d]:
 			self._player.moveplayer(self._player.speed, 0)
 		if pressed_keys[pygame.K_SPACE]:
-			bullet = PlayerBullet(self._player.rect.x + 16, self._player.rect.y + 8)
-			self.all_player_bullets_group.add(bullet)
-			self.all_sprites_group.add(bullet)
-
+			if self._player.canshoot(time):
+				bullet = PlayerBullet(self._player.rect.x + 16, self._player.rect.y + 8)
+				self.all_player_bullets_group.add(bullet)
+				self.all_sprites_group.add(bullet)
+			else:
+				pass
 		if self._player.rect.left < 0:
 			self._player.rect.left = 0
 		if self._player.rect.right > 512:
@@ -60,15 +62,16 @@ class GameLoop:
 				if event.type == pygame.QUIT:
 					run = False
 				
+			current_time = self._clock.get_ticks()	
 			
 			for enemy in self.all_enemies:
-				if enemy.canshoot():
-					bullet = EnemyBullet1(enemy.rect.x + 16, enemy.rect.y + 20, 10)
+				if enemy.canshoot(current_time):
+					bullet = EnemyBullet1(enemy.rect.x + 30, enemy.rect.y + 30, 10)
 					self.enemy_bullets.add(bullet)
 					self.all_sprites_group.add(bullet)
 
 			pressed_keys = pygame.key.get_pressed()
-			self.playercontrol(pressed_keys)
+			self.playercontrol(pressed_keys, current_time)
 			self.all_sprites_group.update()
 
 			for bullet in self.all_player_bullets_group:
@@ -80,6 +83,7 @@ class GameLoop:
 			for bullet in self.enemy_bullets:
 				player_hit = pygame.sprite.spritecollide(bullet, self.playergroup, True)
 				if player_hit:
+					pygame.time.wait(2000)
 					run = False
 
 			self._clock.tick(30)
