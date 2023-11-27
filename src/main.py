@@ -2,6 +2,7 @@ import pygame
 from renderer import Renderer
 from game_loop import GameLoop
 from player import Player
+from clock import Clock
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
 	player = Player(236, 800)
 
 	renderer = Renderer(display)
-	clock = pygame.time.Clock()
+	clock = Clock()
 	
 	game = GameLoop(clock, renderer, player)
 	

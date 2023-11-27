@@ -9,12 +9,14 @@ class GameLoop:
 		self._clock = clock
 		self._renderer = renderer
 		self._player = player
+
 		self.playergroup = pygame.sprite.Group()
 		self.playergroup.add(self._player)
 		self.all_sprites_group = pygame.sprite.Group()
 		self.all_player_bullets_group = pygame.sprite.Group()
 		self.all_enemies = pygame.sprite.Group()
 		self.all_sprites_group.add(self._player)
+		self.enemy_bullets = pygame.sprite.Group()
 
 		self.test_enemy = Enemy1(200, -500, 1)
 		self.all_enemies.add(self.test_enemy)
@@ -58,11 +60,12 @@ class GameLoop:
 				if event.type == pygame.QUIT:
 					run = False
 				
-			enemy_bullets = pygame.sprite.Group()
+			
 			for enemy in self.all_enemies:
-				bullets = enemy.listbullets()
-				enemy_bullets.add(bullets)
-				self.all_sprites_group.add(enemy_bullets)
+				if enemy.canshoot():
+					bullet = EnemyBullet1(enemy.rect.x + 16, enemy.rect.y + 20, 10)
+					self.enemy_bullets.add(bullet)
+					self.all_sprites_group.add(bullet)
 
 			pressed_keys = pygame.key.get_pressed()
 			self.playercontrol(pressed_keys)
@@ -74,16 +77,14 @@ class GameLoop:
 					self.all_enemies.remove(i)
 					self.all_sprites_group.remove(i)
 
-			for bullet in enemy_bullets:
+			for bullet in self.enemy_bullets:
 				player_hit = pygame.sprite.spritecollide(bullet, self.playergroup, True)
 				if player_hit:
 					run = False
 
-			self._clock.tick(fps)
+			self._clock.tick(30)
 			self._renderer.render(self.all_sprites_group)
 
-			for sprite in self.all_sprites_group:
-				if isinstance (self, EnemyBullet1):
-					sprite.kill()
+			
 			
 			
