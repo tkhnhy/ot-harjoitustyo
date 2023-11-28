@@ -4,3 +4,6 @@
 |20.11	|2			|Projektin peruskoodasu jatkuu|
 |21.11	|0.5		|Ohjelman perustoiminnallisuuden koodausta|
 |27.11  |2          |Luodit ja niiden leikkaukset|
+|28.11	|1			|testejä yms|
+|:------|:----------|:-----|
+|Summa	|6.5		||
