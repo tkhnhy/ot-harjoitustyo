@@ -1,5 +1,4 @@
 import pygame
-from pygame.constants import DROPTEXT
 
 class Player(pygame.sprite.Sprite):
 	
@@ -25,9 +24,6 @@ class Player(pygame.sprite.Sprite):
 			return True
 		else:
 			return False
-	
-	def get_previous_time(self):
-		return self.previous_shoot_time
-		
+			
 	def update(self):
 		pass

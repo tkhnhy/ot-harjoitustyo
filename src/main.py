@@ -7,22 +7,21 @@ from clock import Clock
 
 def main():
 
-	pygame.init()
-	
-	display_height = 856
-	display_width = 512
-	display = pygame.display.set_mode((display_width, display_height))
-	
-	player = Player(236, 800)
+    pygame.init()
 
-	renderer = Renderer(display)
-	clock = Clock()
-	
-	game = GameLoop(clock, renderer, player)
-	
-	
-	game.Loop()
-	
-		
+    display_height = 856
+    display_width = 512
+    display = pygame.display.set_mode((display_width, display_height))
+
+    player = Player(236, 800)
+
+    renderer = Renderer(display)
+    clock = Clock()
+
+    game = GameLoop(clock, renderer, player)
+
+    game.Loop()
+
+
 if __name__ == "__main__":
-	main()
+    main()

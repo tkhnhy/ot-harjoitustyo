@@ -1,6 +1,7 @@
 import unittest
 from enemies import Enemy1
 
+
 class TestEnemy1(unittest.TestCase):
     def setUp(self):
         self.enemyp1 = Enemy1(100, 100, 1)
@@ -27,7 +28,7 @@ class TestEnemy1(unittest.TestCase):
 
     def test_canshoot_change_previous(self):
         self.enemyp1.canshoot(2000)
-        
+
         self.assertEqual(self.enemyp1.previous_shoot_time, 2000)
 
     def test_update_move(self):
