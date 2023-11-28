@@ -26,5 +26,8 @@ class Player(pygame.sprite.Sprite):
 		else:
 			return False
 	
+	def get_previous_time(self):
+		return self.previous_shoot_time
+		
 	def update(self):
 		pass

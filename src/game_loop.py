@@ -86,7 +86,7 @@ class GameLoop:
 					pygame.time.wait(2000)
 					run = False
 
-			self._clock.tick(30)
+			self._clock.tick(fps)
 			self._renderer.render(self.all_sprites_group)
 
 			
