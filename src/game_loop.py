@@ -2,6 +2,7 @@ import pygame
 from enemies import Enemy1
 from enemybullet import EnemyBullet1
 from playerbullet import PlayerBullet
+from enemy_spawns import Enemy_Spawns
 
 
 class GameLoop:
@@ -10,23 +11,25 @@ class GameLoop:
         self._clock = clock
         self._renderer = renderer
         self._player = player
-
+        
         self.playergroup = pygame.sprite.Group()
         self.playergroup.add(self._player)
+        self.all_enemies = pygame.sprite.Group()
         self.all_sprites_group = pygame.sprite.Group()
         self.all_player_bullets_group = pygame.sprite.Group()
-        self.all_enemies = pygame.sprite.Group()
         self.all_sprites_group.add(self._player)
         self.enemy_bullets = pygame.sprite.Group()
 
-        self.test_enemy = Enemy1(200, -500, 1)
-        self.all_enemies.add(self.test_enemy)
-        self.all_sprites_group.add(self.test_enemy)
-
-        self.test_enemy2 = Enemy1(300, 0, 2)
-        self.all_enemies.add(self.test_enemy2)
-        self.all_sprites_group.add(self.test_enemy2)
-
+        self.enemy_spawns = Enemy_Spawns()
+    
+    def spawn(self, time):
+        try:
+            for enemy in self.enemy_spawns.spawn(time):
+                self.all_sprites_group.add(enemy)
+                self.all_enemies.add(enemy)
+        except:
+            pass
+	
     def playercontrol(self, pressed_keys, time):
 
         if pressed_keys[pygame.K_w]:
@@ -65,6 +68,9 @@ class GameLoop:
                     run = False
 
             current_time = self._clock.get_ticks()
+            if current_time > 50000:
+                run = False
+            self.spawn(current_time)
 
             for enemy in self.all_enemies:
                 if enemy.canshoot(current_time):
