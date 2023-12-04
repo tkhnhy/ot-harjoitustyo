@@ -5,3 +5,7 @@
 
 ## Viikko 4
 - Lisätty luodit ja niiden leikkaukset
+
+## Viikko 5
+- Luodit katoavat kun osuvat viholliseen
+- Tehty vihollisia luova luokka

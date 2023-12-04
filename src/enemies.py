@@ -22,6 +22,10 @@ class Enemy1(pygame.sprite.Sprite):
             self.rect.move_ip(0, 5)
         if pattern == 2:
             self.rect.move_ip(0, 3)
+        if pattern == 3:
+            self.rect.move_ip(4, 0)
+        if pattern == 4:
+            self.rect.move_ip(-4, 0)
 
     def get_pattern(self):
         return self.pattern
@@ -38,6 +42,8 @@ class Enemy1(pygame.sprite.Sprite):
     def update(self):
         if self.rect.y > 856:
             self.kill()
-        if 1056 < self.rect.x < -200:
+        if self.rect.x < -1000:
+            self.kill()
+        if self.rect.x > 1500:
             self.kill()
         self.move(self.pattern)
