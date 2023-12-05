@@ -1,7 +1,7 @@
 import pygame
-from enemies import Enemy1
-from enemybullet import EnemyBullet1
-from playerbullet import PlayerBullet
+from sprites.enemies import Enemy1
+from sprites.enemybullet import EnemyBullet1
+from sprites.playerbullet import PlayerBullet
 from enemy_spawns import Enemy_Spawns
 
 

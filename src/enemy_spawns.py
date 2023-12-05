@@ -1,4 +1,4 @@
-from enemies import Enemy1
+from sprites.enemies import Enemy1
 
 class Enemy_Spawns:
 	def __init__(self):

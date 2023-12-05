@@ -1,7 +1,7 @@
 import pygame
 from renderer import Renderer
 from game_loop import GameLoop
-from player import Player
+from sprites.player import Player
 from clock import Clock
 from highscores import Highscores
 
