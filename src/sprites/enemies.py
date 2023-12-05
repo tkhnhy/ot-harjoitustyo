@@ -1,5 +1,4 @@
 import pygame
-from sprites.enemybullet import EnemyBullet1
 
 
 class Enemy1(pygame.sprite.Sprite):
@@ -33,11 +32,10 @@ class Enemy1(pygame.sprite.Sprite):
     def canshoot(self, current_time):
         if self.rect.y < 0:
             return False
-        elif current_time - self.previous_shoot_time >= 2000:
+        if current_time - self.previous_shoot_time >= 2000:
             self.previous_shoot_time = current_time
             return True
-        else:
-            return False
+        return False
 
     def update(self):
         if self.rect.y > 856:

@@ -10,9 +10,9 @@ class TestPlayerBullet(unittest.TestCase):
 
     def test_update(self):
         self.playerbullet.update()
-        
+
         self.assertEqual(self.playerbullet.rect.y, 485)
-    
+
     def test_update_kill(self):
         bullets = pygame.sprite.Group()
         bullets.add(self.playerbullet)

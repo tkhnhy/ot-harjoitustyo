@@ -27,5 +27,6 @@ def main():
     scoresystem.writescore(game.score)
     scoresystem.readscore()
 
+
 if __name__ == "__main__":
     main()

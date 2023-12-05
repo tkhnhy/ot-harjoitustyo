@@ -1,8 +1,7 @@
 import pygame
-from sprites.enemies import Enemy1
 from sprites.enemybullet import EnemyBullet1
 from sprites.playerbullet import PlayerBullet
-from enemy_spawns import Enemy_Spawns
+from enemy_spawns import EnemySpawns
 
 
 class GameLoop:
@@ -11,7 +10,7 @@ class GameLoop:
         self._clock = clock
         self._renderer = renderer
         self._player = player
-        
+
         self.playergroup = pygame.sprite.Group()
         self.playergroup.add(self._player)
         self.all_enemies = pygame.sprite.Group()
@@ -20,7 +19,7 @@ class GameLoop:
         self.all_sprites_group.add(self._player)
         self.enemy_bullets = pygame.sprite.Group()
 
-        self.enemy_spawns = Enemy_Spawns()
+        self.enemy_spawns = EnemySpawns()
 
         self.score = 0
 
@@ -31,7 +30,7 @@ class GameLoop:
                 self.all_enemies.add(enemy)
         except:
             pass
-	
+
     def playercontrol(self, pressed_keys, time):
 
         if pressed_keys[pygame.K_w]:
@@ -74,7 +73,7 @@ class GameLoop:
                 run = False
             self.spawn(current_time)
 
-            #Enemy shooting
+            # Enemy shooting
             for enemy in self.all_enemies:
                 if enemy.canshoot(current_time):
                     bullet = EnemyBullet1(
@@ -86,7 +85,7 @@ class GameLoop:
             self.playercontrol(pressed_keys, current_time)
             self.all_sprites_group.update()
 
-            #Collisions
+            # Collisions
             for bullet in self.all_player_bullets_group:
                 enemy_hits = pygame.sprite.spritecollide(
                     bullet, self.all_enemies, True)
@@ -97,7 +96,7 @@ class GameLoop:
                 if enemy_hits:
                     self.all_player_bullets_group.remove(bullet)
                     self.all_sprites_group.remove(bullet)
-            
+
             for bullet in self.enemy_bullets:
                 player_hit = pygame.sprite.spritecollide(
                     bullet, self.playergroup, True)
