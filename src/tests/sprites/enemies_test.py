@@ -1,5 +1,5 @@
 import unittest
-from enemies import Enemy1
+from sprites.enemies import Enemy1
 
 
 class TestEnemy1(unittest.TestCase):

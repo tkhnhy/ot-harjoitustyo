@@ -1,6 +1,6 @@
 import unittest
 import pygame
-from playerbullet import PlayerBullet
+from sprites.playerbullet import PlayerBullet
 
 
 class TestPlayerBullet(unittest.TestCase):

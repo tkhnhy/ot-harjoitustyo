@@ -1,6 +1,6 @@
 import unittest
 import pygame
-from enemybullet import EnemyBullet1
+from sprites.enemybullet import EnemyBullet1
 
 class TestEnemyBullet1(unittest.TestCase):
     def setUp(self):

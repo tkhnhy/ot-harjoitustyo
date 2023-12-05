@@ -9,9 +9,10 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 ### Tämänhetkinen toiminnallisuus
 - Pelaaja voi ohjata alustaan ja ampua
 - luotien leikkaukset toimivat
-#### Tulevaisuudessa
 - Luokka, joka luo uusia vihollisia riippuen kuluneesta ajasta
+- Highscore lista, johon pelaaja voi tallentaa oman nimen ja pistemäärän
+
 
 ### Jatkokehitysideoita
-- Highscore lista, johon pelaaja voi tallentaa oman nimen ja pistemäärän
+- varsinainen käyttöliittymä highscore listalle
 - Korkeampi vaikeusaste (lisää vihollisia?)
