@@ -9,3 +9,4 @@
 ## Viikko 5
 - Luodit katoavat kun osuvat viholliseen
 - Tehty vihollisia luova luokka
+- Lisätty highscore mekaniikka

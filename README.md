@@ -11,6 +11,7 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 - [Tuntikirjanpito](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [Vaatimusmäärittely](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+- [Arkkitehtuuri](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
 ## Ohjelman käyttö
 
