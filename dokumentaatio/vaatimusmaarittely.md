@@ -14,5 +14,6 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 
 
 ### Jatkokehitysideoita
+- Paranna vihollisten luonti luokkaa
 - varsinainen käyttöliittymä highscore listalle
 - Korkeampi vaikeusaste (lisää vihollisia?)

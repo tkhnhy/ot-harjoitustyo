@@ -2,6 +2,12 @@ import pygame
 
 
 class Boss(pygame.sprite.Sprite):
+    """A boss enemy.
+    
+    Args:
+        x: starting x position
+        y: starting y position
+    """
     def __init__(self, x, y):
         super().__init__()
 

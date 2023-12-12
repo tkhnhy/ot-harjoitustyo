@@ -2,7 +2,13 @@ import pygame
 
 
 class EnemyBullet1(pygame.sprite.Sprite):
-
+    """A projectile shot by the enemies.
+    
+    Args:
+        x: starting x position
+        y: startin y position
+        speed: how fast the bullet travels
+    """
     def __init__(self, x, y, speed):
         super().__init__()
 

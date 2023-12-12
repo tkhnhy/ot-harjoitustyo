@@ -2,7 +2,12 @@ import pygame
 
 
 class PlayerBullet(pygame.sprite.Sprite):
-
+    """A projectile shot by the player.
+        
+        Args:
+            x: starting x position
+            y: startin y position
+        """
     def __init__(self, x, y):
         super().__init__()
 
