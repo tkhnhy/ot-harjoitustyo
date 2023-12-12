@@ -2,6 +2,8 @@ from sprites.enemies import Enemy1
 
 
 class Arrangements:
+    """Class that holds the various patterns used by EnemySpawns class.
+    """
     # Slow sides, fast middle
     def arrangement1(self):
         enemy_list = [

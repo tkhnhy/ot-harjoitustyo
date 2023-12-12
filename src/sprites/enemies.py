@@ -2,6 +2,13 @@ import pygame
 
 
 class Enemy1(pygame.sprite.Sprite):
+    """An enemy the player has to shoot.
+    
+    Args:
+        x: Starting x-coordinate
+        y: Starting y-coordinate
+        pattern: Determines the speen and direction the enemy moves in
+    """
 
     def __init__(self, x, y, pattern):
         super().__init__()
@@ -30,6 +37,13 @@ class Enemy1(pygame.sprite.Sprite):
         return self.pattern
 
     def canshoot(self, current_time):
+        """Checks if enough time has passed since the players previous shot to shoot again.
+        Args:
+            current_time: Time passed since the start of the program
+        
+        Returns:
+            True if enough time has passed and a new shot is allowed, False if not enough time has passed
+        """
         if self.rect.y < 0:
             return False
         if current_time - self.previous_shoot_time >= 2000:
@@ -38,6 +52,12 @@ class Enemy1(pygame.sprite.Sprite):
         return False
 
     def update(self):
+        """Updates the enemys state.
+        
+        Function that is called in gameloop every frame that either moves
+        the enemy or destroys it if it has moved too far.
+        
+        """
         if self.rect.y > 856:
             self.kill()
         if self.rect.x < -1000:

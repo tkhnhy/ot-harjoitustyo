@@ -2,11 +2,22 @@ from arrangements import Arrangements
 
 
 class EnemySpawns:
+    """Class responsible for creating new enemies.
+    """
     def __init__(self):
         self.wave_count = 0
         self.arrs = Arrangements()
 
+    def change_wave_count(self, count):
+        """Changes the current wave, mainly used for unittest.
+        """
+        self.wave_count = count
+
     def spawn(self, current_time):
+        """Returns a predetermined list of enemies based on time and wave count.
+        Args:
+            current_time: Time elapsed that determines when a wave should be returned
+        """
         # Wave 1
         if current_time > 0 and self.wave_count == 0:
             self.wave_count += 1
