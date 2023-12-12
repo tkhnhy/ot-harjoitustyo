@@ -9,5 +9,5 @@
 |03.12  |2          |enemy_spawns jatkoa ja muita pieniä muutoksia|
 |04.12  |1          |Pisteytys järjestelmä|
 |05.12	|1			|Erottelua uusiin luokkiin ja kansioihin|
-|12.12  |3          |Docstring, lisää testejä|
-|Summa	|14		||
+|12.12  |4          |Docstring, lisää testejä, luotu pomo|
+|Summa	|15		||

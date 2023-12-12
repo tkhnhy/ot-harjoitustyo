@@ -1,10 +1,10 @@
 import pygame
 from interface.renderer import Renderer
 from interface.display import Display
+from interface.highscore_interface import HighscoreInterface
 from game_loop import GameLoop
 from sprites.player import Player
 from clock import Clock
-from interface.highscore_interface import HighscoreInterface
 from event_queue import EventQueue
 
 

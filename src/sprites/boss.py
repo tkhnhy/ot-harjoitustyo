@@ -1,5 +1,6 @@
 import pygame
 
+
 class Boss(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
@@ -11,8 +12,9 @@ class Boss(pygame.sprite.Sprite):
         self.rect.y = y
 
         self.health = 30
-        
+
         self.previous_shoot_time = 0
+        self.fireseq = 1
 
         self.name = "BossAlien"
 
@@ -25,13 +27,25 @@ class Boss(pygame.sprite.Sprite):
         """Checks if enough time has passed since the players previous shot to shoot again.
         Args:
             current_time: Time passed since the start of the program
-        
+
         Returns:
-            True if enough time has passed and a new shot is allowed, False if not enough time has passed
+            True if enough time has passed and a new shot is allowed, False if not
         """
-        if self.rect.y < 0:
+        if self.rect.y < -70:
             return False
-        if current_time - self.previous_shoot_time >= 1500:
+        if current_time - self.previous_shoot_time >= 1000:
             self.previous_shoot_time = current_time
             return True
         return False
+
+    def move(self):
+        if self.rect.y < -50:
+            self.rect.move_ip(0, 2)
+        else:
+            pass
+
+    def setfire(self, mode):
+        self.fireseq = mode
+
+    def update(self):
+        self.move()

@@ -10,3 +10,6 @@
 - Luodit katoavat kun osuvat viholliseen
 - Tehty vihollisia luova luokka
 - Lisätty highscore mekaniikka
+
+## Viikko 6
+- Lisätty pomohahmo tason loppuun

@@ -2,6 +2,7 @@ import unittest
 from enemy_spawns import EnemySpawns
 from arrangements import Arrangements
 
+
 class TestEnemySpawns(unittest.TestCase):
     def setUp(self):
         self.spawner = EnemySpawns()
@@ -16,7 +17,7 @@ class TestEnemySpawns(unittest.TestCase):
         enemies = self.spawner.spawn(500)
 
         self.assertEqual(enemies, None)
-        
+
     def test_spawn_wave1(self):
         enemies = self.spawner.spawn(100)
         ref_enemies = self.ref_arrangements.arrangement1()

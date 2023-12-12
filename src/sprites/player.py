@@ -35,14 +35,14 @@ class Player(pygame.sprite.Sprite):
         """Checks if enough time has passed since the players previous shot to shoot again.
         Args:
             current_time: Time passed since the start of the program
-        
+
         Returns:
-            True if enough time has passed and a new shot is allowed, False if not enough time has passed
+            True if enough time has passed and a new shot is allowed, False if not
         """
         if current_time - self.previous_shoot_time >= 300:
             self.previous_shoot_time = current_time
             return True
         return False
-    
+
     def update(self):
         pass

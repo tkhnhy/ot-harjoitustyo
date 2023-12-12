@@ -1,10 +1,18 @@
 from sprites.enemies import Enemy1
+from sprites.boss import Boss
 
 
 class Arrangements:
     """Class that holds the various patterns used by EnemySpawns class.
     """
+
+    def arrangementboss(self):
+        enemy_list = [
+            Boss(65, -500)
+        ]
+        return enemy_list
     # Slow sides, fast middle
+
     def arrangement1(self):
         enemy_list = [
             Enemy1(20, 0, 2),

@@ -3,10 +3,11 @@ import csv
 
 class Highscores:
     """Class that is responsible for reading and writing the highscore csv file.
-    
+
     Args:
         file: path of the csv file the class should handle
     """
+
     def __init__(self, file):
         self.highscorefile = file
 
@@ -17,7 +18,6 @@ class Highscores:
             scores = csv.reader(score_file)
             sortedlist = sorted(scores, key=lambda row: row[1], reverse=True)
         return sortedlist
-            
 
     def writescore(self, player_score, name):
         """Writes the players score to the csv file.

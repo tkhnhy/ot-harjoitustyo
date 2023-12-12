@@ -1,8 +1,10 @@
 from highscores import Highscores
 
+
 class HighscoreInterface:
     """Responsible for the terminal part of the highscore system.
     """
+
     def __init__(self):
         self.score_handler = Highscores("src/highscores.csv")
 
@@ -20,7 +22,7 @@ class HighscoreInterface:
                 count += 1
             except ValueError:
                 break
-        
+
     def askname(self, player_score):
         """Asks the players name in terminal and then gives it and the score to writescore function.
 

@@ -4,6 +4,7 @@ from arrangements import Arrangements
 class EnemySpawns:
     """Class responsible for creating new enemies.
     """
+
     def __init__(self):
         self.wave_count = 0
         self.arrs = Arrangements()
@@ -66,3 +67,39 @@ class EnemySpawns:
         if current_time > 32000 and self.wave_count == 11:
             self.wave_count += 1
             return self.arrs.arrangement7()
+        # Wave 13
+        if current_time > 35000 and self.wave_count == 12:
+            self.wave_count += 1
+            return self.arrs.arrangement5()
+        # Wave 14
+        if current_time > 38000 and self.wave_count == 13:
+            self.wave_count += 1
+            return self.arrs.arrangement6()
+        # Wave 15
+        if current_time > 38000 and self.wave_count == 14:
+            self.wave_count += 1
+            return self.arrs.arrangement2()
+        # Wave 16
+        if current_time > 42000 and self.wave_count == 15:
+            self.wave_count += 1
+            return self.arrs.arrangement7()
+         # Wave 17
+        if current_time > 43000 and self.wave_count == 16:
+            self.wave_count += 1
+            return self.arrs.arrangement3()
+        # Boss
+        if current_time > 44000 and self.wave_count == 17:
+            self.wave_count += 1
+            return self.arrs.arrangementboss()
+        # Wave 18
+        if current_time > 50000 and self.wave_count == 18:
+            self.wave_count += 1
+            return self.arrs.arrangement2()
+        # Wave 19
+        if current_time > 55000 and self.wave_count == 19:
+            self.wave_count += 1
+            return self.arrs.arrangement2()
+        # Wave 20
+        if current_time > 60000 and self.wave_count == 20:
+            self.wave_count += 1
+            return self.arrs.arrangement2()

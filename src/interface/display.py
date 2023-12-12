@@ -1,5 +1,6 @@
 import pygame
 
+
 class Display:
     def __init__(self):
         self.display_height = 856
