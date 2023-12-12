@@ -14,6 +14,9 @@ Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pe
 - [Vaatimusmäärittely](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 - [Arkkitehtuuri](https://github.com/tkhnhy/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
+
+## Releaset
+- [Löydät releaset täältä](https://github.com/tkhnhy/ot-harjoitustyo/releases)
 ## Ohjelman käyttö
 
 1. Asenna riippuvuudet poetrylla
@@ -25,4 +28,15 @@ poetry install
 2. Käynnistä ohjelma komennolla 
 ```sh
 poetry run invoke start
+```
+
+## Muita komentoja 
+
+- Luo coverage html raportti
+```sh
+poetry run invoke coverage_report
+```
+- Pylint arviointi
+```sh
+poetry run invoke lint
 ```
