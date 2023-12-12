@@ -1,4 +1,5 @@
 import unittest
+import pygame
 from sprites.enemies import Enemy1
 
 
@@ -35,3 +36,11 @@ class TestEnemy1(unittest.TestCase):
         self.enemyp1.update()
 
         self.assertEqual(self.enemyp1.rect.y, 105)
+
+    def test_update_death(self):
+        enemies = pygame.sprite.Group()
+        enemydie = Enemy1(5000, 5000, 1)
+        enemies.add(enemydie)
+        enemydie.update()
+
+        self.assertEqual(len(enemies), 0)

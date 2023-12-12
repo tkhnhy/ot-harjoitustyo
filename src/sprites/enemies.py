@@ -23,6 +23,8 @@ class Enemy1(pygame.sprite.Sprite):
         self.pattern = pattern
         self.previous_shoot_time = 0
 
+        self.name = "AlienShip"
+
     def move(self, pattern):
         if pattern == 1:
             self.rect.move_ip(0, 5)

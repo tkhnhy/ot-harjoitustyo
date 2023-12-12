@@ -35,31 +35,3 @@ class Highscores:
         with open(self.highscorefile, "a", newline='', encoding="utf-8") as score_file:
             scores = csv.writer(score_file)
             scores.writerow(row)
-
-    def printscore(self):
-        """Function that prints the score to consle.
-        """
-        count = 0
-        print("Highscores:")
-        print("-----------------")
-        for row in self.readscore():
-            try:
-                if count > 9:
-                    break
-                print(f"{count + 1}. {row[0]} - {row[1]}")
-                count += 1
-            except ValueError:
-                break
-        
-    def askname(self, player_score):
-        """Asks the players name in terminal and then gives it and the score to writescore function.
-
-        Args:
-            player_score: The score the player has gotten
-        """
-        while True:
-            name = input("Enter a 3 letter name:").upper()
-            if len(name) < 4 and len(name) > 2:
-                self.writescore(player_score, name)
-                break
-            print("Please enter a 3 letter name")

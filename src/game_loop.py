@@ -36,8 +36,8 @@ class GameLoop:
         """
         try:
             for enemy in self.enemy_spawns.spawn(time):
-                self.all_sprites_group.add(enemy)
-                self.all_enemies.add(enemy)
+                    self.all_sprites_group.add(enemy)
+                    self.all_enemies.add(enemy)
         except:
             pass
 
@@ -65,6 +65,7 @@ class GameLoop:
                 self.all_sprites_group.add(bullet)
             else:
                 pass
+        
         self._player.rect.left = max(0, min(self._player.rect.left, 512))
         self._player.rect.right = min(512, max(self._player.rect.right, 0))
         self._player.rect.top = max(0, min(self._player.rect.top, 856))
@@ -73,10 +74,18 @@ class GameLoop:
     def enemy_shooting(self, time):
         for enemy in self.all_enemies:
                 if enemy.canshoot(time):
-                    bullet = EnemyBullet1(
-                        enemy.rect.x + 14, enemy.rect.y + 30, 8)
-                    self.enemy_bullets.add(bullet)
-                    self.all_sprites_group.add(bullet)
+                    if enemy.name == "AlienShip":
+                        bullet = EnemyBullet1(
+                            enemy.rect.x + 14, enemy.rect.y + 30, 8)
+                        self.enemy_bullets.add(bullet)
+                        self.all_sprites_group.add(bullet)
+                    if enemy.name == "BossAlien":
+                        bullets = [
+                            EnemyBullet1(enemy.rect.x + 14, enemy.rect.y + 30, 8),
+                            ]
+                        for bullet in bullets:
+                            self.enemy_bullets.add(bullet)
+                            self.all_sprites_group.add(bullet)
 
     def check_pbullet_enemy_coll(self):
         """Checks collision between playerbullets and enemies, and removes them if collide.
@@ -84,10 +93,19 @@ class GameLoop:
         for bullet in self.all_player_bullets_group:
                 enemy_hits = pygame.sprite.spritecollide(
                     bullet, self.all_enemies, True)
-                for i in enemy_hits:
-                    self.all_enemies.remove(i)
-                    self.all_sprites_group.remove(i)
-                    self.score += 10
+                for enemy in enemy_hits:
+                    if enemy.name == "AlienShip":
+                        self.all_enemies.remove(enemy)
+                        self.all_sprites_group.remove(enemy)
+                        self.score += 10
+                    if enemy.name == "BossAlien":
+                        enemy.reduce_health()
+                        if enemy.health <= 0:
+                            self.all_enemies.remove(enemy)
+                            self.all_sprites_group.remove(enemy)
+                            self.score += 100
+                            self.run = False
+                        
                 if enemy_hits:
                     self.all_player_bullets_group.remove(bullet)
                     self.all_sprites_group.remove(bullet)

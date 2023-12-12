@@ -4,7 +4,7 @@ from interface.display import Display
 from game_loop import GameLoop
 from sprites.player import Player
 from clock import Clock
-from highscores import Highscores
+from interface.highscore_interface import HighscoreInterface
 from event_queue import EventQueue
 
 
@@ -15,7 +15,7 @@ def main():
     display = Display()
 
     player = Player(236, 800)
-    scoresystem = Highscores("src/highscores.csv")
+    scoresystem = HighscoreInterface()
 
     renderer = Renderer(display.give_display())
     clock = Clock()
