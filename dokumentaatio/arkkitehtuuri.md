@@ -93,5 +93,5 @@ participant main
 
 User->>highscore_interface: Syöttää nimensä
 highscore_interface->>highscores: writescore "nimi, pistemäärä"
-main -->> highscores: antaa pistemäärän
+main -->> highscore_interface: antaa pistemäärän
 ```
