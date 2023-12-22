@@ -20,6 +20,8 @@ class PlayerBullet(pygame.sprite.Sprite):
         self.speed = 15
 
     def update(self):
+        """Updates the bullets position and kills it if it goes offscreen.
+        """
         self.rect.move_ip(0, -self.speed)
         if self.rect.y < 0:
             self.kill()

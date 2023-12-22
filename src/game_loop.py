@@ -72,6 +72,11 @@ class GameLoop:
         self._player.rect.bottom = min(856, max(self._player.rect.bottom, 0))
 
     def enemy_shooting(self, time):
+        """Goes through all enemies and makes them shoot if they are able.
+        
+        Args: 
+            time: time since program has started
+        """
         for enemy in self.all_enemies:
             if enemy.canshoot(time):
                 if enemy.name == "AlienShip":
