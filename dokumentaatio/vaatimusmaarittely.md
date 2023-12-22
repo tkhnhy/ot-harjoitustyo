@@ -1,7 +1,7 @@
 # Shoot Em' Up Arcade-peli
 
 Shoot Em' Up tyylinen arcade-peli, jossa pelaaja ohjaa avaruusalusta ja väistelee ja ampuu vastaantulevia vihollisia.
-Alkuun yhdentyyppisiä vihollisia, mutta myöhemmin mahdollisesti lisää vihollistyyppejä.
+Tason lopussa ilmestyy vahvempi pomo-hahmo.
 
 Peli on muutaman minuutin kestävä taso, joka etenee omaa tahtiaan, ja jossa pelaajan alus voi liikkua ja ampua vihollisia jotka ilmestyvät näytölle.
 
