@@ -5,7 +5,7 @@
 Sovellus on jaettu kolmeen osaan, sprites sisältää näytöllä näkyvät oliot, interface sisältää käyttöliittymää
 koskevan koodin, ja viimeinen osa on varsinainen sovelluslogiikka.
 
-![Pakkausrakenne](./kuvat/pakkaus.png)
+![Pakkausrakenne](./kuvat/package.png)
 
 ```mermaid
 
