@@ -7,6 +7,7 @@ koskevan koodin, ja viimeinen osa on varsinainen sovelluslogiikka.
 
 ![Pakkausrakenne](./kuvat/package.PNG)
 
+#### Luokkakaavio
 ```mermaid
 
 flowchart TD;
@@ -27,4 +28,25 @@ flowchart TD;
 	enemies --> enemy_spawns
 	main --> highscore
 	
+```
+## Käyttöliittymä
+
+Käyttöliittymä koostuu kahdesta eri näkymästä. Varsinainen graaphinen pelinäkymä, sekä terminaalin highscore näkymä. Käyttölittymä on eristetty varsinaisesta sovelluslogiikasta
+
+## Päätoiminnallisuudet
+
+Aluksen ohjaus:
+
+```mermaid
+sequenceDiagram
+title Siirrä alus vasemmalle
+
+actor User
+participant game_loop
+participant sprites.player
+participant interface.renderer
+
+User->>game_loop: Painaa "a" näppäintä
+game_loop->>sprites.player: moveplayer
+game_loop->>interface.renderer: render
 ```
