@@ -10,4 +10,5 @@
 |04.12  |1          |Pisteytys järjestelmä|
 |05.12	|1			|Erottelua uusiin luokkiin ja kansioihin|
 |12.12  |4          |Docstring, lisää testejä, luotu pomo|
-|Summa	|15		||
+|22.12  |2          |Dokumentaatio, testejä|
+|Summa	|17		||
