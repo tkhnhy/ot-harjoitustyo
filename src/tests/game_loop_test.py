@@ -86,3 +86,15 @@ class TestGameLoop(unittest.TestCase):
         self.gameloop.check_enemy_player_coll()
 
         self.assertGreater(pre_len, len(self.gameloop.playergroup))
+
+    def test_enemy_shoot(self):
+        test_enemy = Enemy1(236, 200, 1)
+
+        self.gameloop.all_sprites_group.add(test_enemy)
+        self.gameloop.all_enemies.add(test_enemy)
+
+        pre_len = len(self.gameloop.enemy_bullets)
+
+        self.gameloop.enemy_shooting(3000)
+
+        self.assertGreater(len(self.gameloop.enemy_bullets), pre_len)

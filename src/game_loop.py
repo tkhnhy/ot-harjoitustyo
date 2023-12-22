@@ -154,6 +154,9 @@ class GameLoop:
                 self.run = False
 
     def loop(self):
+        """The loop that goes through all functions processing the game state.
+        """
+
 
         fps = 30
 
