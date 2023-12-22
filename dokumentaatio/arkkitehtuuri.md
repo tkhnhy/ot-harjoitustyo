@@ -47,12 +47,12 @@ flowchart TD;
 	clock(clock)
 	event_queue(event_queue)
 	
-	game_loop -> enemy_spawns
-	game_loop -> clock
-	game_loop -> event_queue
-	game_loop -> sprites
-	enemy_spawns -> arrangements
-	arrangements -> sprites
+	game_loop --> enemy_spawns
+	game_loop --> clock
+	game_loop --> event_queue
+	game_loop --> sprites
+	enemy_spawns --> arrangements
+	arrangements --> sprites
 	
 ```
 #### Highscore tietojen talletus
